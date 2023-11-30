@@ -29,10 +29,23 @@ const buttons = document.querySelectorAll(".btn");
 buttons.forEach(button =>{
 
     if(button.id === "ce"){
-        display.textContent = 0;
-        return
+        display.textContent = "0";
+        return;
+    };
+
+    if(button.id === "c"){
+        if(display.textContent.length ===1){
+            display.textContent = "0";
+        }else{
+            display.textContent = display.textContent.slice(0-1);
+        }
+        return;
     }
 
+    if(button.id === "equals"){
+        display.textContent = eval()
+    }
+    
     button.addEventListener("click",()=>{
         let pushedBtn = button.textContent;
         if(display.textContent == 0){
