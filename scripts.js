@@ -6,12 +6,12 @@ buttons.forEach(button => {
  button.addEventListener("click",()=>{
     pushedBtn = button.textContent;
    
-    if(button.id === "c"){
+    if(button.id === "ce"){
         display.textContent = "0";
         return;
     }
 
-    if(button.id === "ce"){
+    if(button.id === "c"){
         if(display.textContent.length === 1 || display.textContent === "Syntax Error"){
             display.textContent = "0";
         }else{
@@ -22,6 +22,7 @@ buttons.forEach(button => {
 
     if(button.id === "equals"){
         try{
+            display.textContent =  display.textContent.replace(/x/g, "*");
             display.textContent = eval(display.textContent);
         }catch{
             display.textContent = "Syntax Error"
